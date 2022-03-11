@@ -21,16 +21,11 @@ logger = sly.logger
 train_ds = os.environ["modal.state.train"]
 test_ds = os.environ["modal.state.test"]
 
-# train_ds = 'Train'  #TODO to debug
-# test_ds = 'Test'  #TODO to debug
-
 datasets = []
 
 for ds in [train_ds, test_ds]:
     if len(ds) != 2:
         datasets.append(ds[1:-1].replace('\'', ''))
-
-# datasets = [train_ds, test_ds]   #TODO to debug
 
 if len(datasets) == 0:
     logger.warn('You have not selected a dataset to import')
@@ -38,9 +33,6 @@ if len(datasets) == 0:
 
 train_percent = int(os.environ["modal.state.samplePercentTrain"])
 test_percent = int(os.environ["modal.state.samplePercentTest"])
-
-# train_percent = 20  #TODO to debug
-# test_percent = 20  #TODO to debug
 
 sample_img_count = {'Train': round(6.43 * train_percent), 'Test': round(1.61 * test_percent)}
 
