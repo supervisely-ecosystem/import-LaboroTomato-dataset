@@ -52,7 +52,7 @@ arch_name = 'laboro_tomato.zip'
 
 folder_name = 'laboro_tomato'
 anns_folder = 'annotations'
-batch_size = 1
+batch_size = 30
 class_name = 'tomato'
 
 obj_class = sly.ObjClass(class_name, sly.Polygon)
